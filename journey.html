@@ -46,7 +46,6 @@
             position: relative;
         }
 
-        /* --- HEADER CONTROLS --- */
         .header-controls {
             position: absolute;
             top: 20px;
@@ -102,21 +101,36 @@
             opacity: 0.9;
         }
 
-        /* --- JOURNEY FLEX LAYOUT --- */
+        /* --- JOURNEY FLEX LAYOUT (SWAPPED) --- */
         .journey-container {
             max-width: 1100px;
             margin: 50px auto;
             display: flex;
-            gap: 40px;
+            gap: 50px;
             padding: 0 20px;
             align-items: flex-start;
         }
 
-        /* --- TIMELINE PROGRESS STYLES --- */
+        /* --- LEFT SIDE IMAGE --- */
+        .journey-image-wrapper {
+            flex: 0 0 420px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .journey-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 5px solid var(--card-bg);
+            transition: 0.3s;
+        }
+
+        /* --- RIGHT SIDE TIMELINE --- */
         .timeline {
             flex: 1;
             position: relative;
-            padding-left: 30px;
+            padding-left: 35px;
             border-left: 4px solid var(--timeline-line);
         }
 
@@ -134,10 +148,10 @@
         .year-card::before {
             content: '';
             position: absolute;
-            left: -39px;
+            left: -45px;
             top: 25px;
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             background: var(--accent-color);
             border: 4px solid var(--bg-color);
             border-radius: 50%;
@@ -159,38 +173,16 @@
         .year-card p {
             line-height: 1.7;
             color: var(--text-muted);
-            margin-bottom: 0;
         }
 
-        /* --- RIGHT SIDE IMAGE --- */
-        .journey-image-wrapper {
-            flex: 0 0 400px;
-            position: sticky;
-            top: 100px;
-        }
-
-        .journey-image-wrapper img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border: 5px solid var(--card-bg);
-            transition: 0.3s;
-        }
-
-        .journey-image-wrapper img:hover {
-            transform: scale(1.02);
-        }
-
-        /* --- POSITIONS OF RESPONSIBILITY --- */
+        /* --- RESPONSIBILITY SECTIONS --- */
         .responsibility-header {
             text-align: center;
             margin-top: 60px;
             margin-bottom: 40px;
         }
 
-        .responsibility-header h2 {
-            color: var(--heading-color);
-        }
+        .responsibility-header h2 { color: var(--heading-color); }
 
         .responsibility-grid {
             display: grid;
@@ -210,38 +202,11 @@
             transition: 0.3s;
         }
 
-        .res-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px var(--shadow);
-        }
+        .res-card i { font-size: 2rem; color: var(--accent-color); margin-bottom: 15px; }
+        .res-card h3 { margin: 10px 0; color: var(--heading-color); }
+        .res-card h4 { font-size: 0.85rem; color: #6b7280; text-transform: uppercase; margin-bottom: 15px; }
+        .res-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
-        .res-card i {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-
-        .res-card h3 {
-            margin: 10px 0;
-            font-size: 1.25rem;
-            color: var(--heading-color);
-        }
-
-        .res-card h4 {
-            font-size: 0.85rem;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 15px;
-        }
-
-        .res-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* --- FOOTER STYLES --- */
         footer {
             background: #111827;
             color: white;
@@ -250,32 +215,12 @@
             margin-top: 80px;
         }
 
-        .footer-socials {
-            margin-bottom: 20px;
-        }
+        .footer-socials a { color: white; font-size: 1.6rem; margin: 0 15px; transition: 0.3s; }
+        .footer-socials a:hover { color: var(--accent-color); }
 
-        .footer-socials a {
-            color: white;
-            font-size: 1.6rem;
-            margin: 0 15px;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-
-        .footer-socials a:hover {
-            color: var(--accent-color);
-        }
-
-        footer p {
-            margin: 8px 0;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-
-        /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 992px) {
             .journey-container {
-                flex-direction: column-reverse;
+                flex-direction: column;
                 align-items: center;
             }
             .journey-image-wrapper {
@@ -284,9 +229,6 @@
                 max-width: 500px;
                 position: static;
                 margin-bottom: 40px;
-            }
-            .timeline {
-                padding-left: 20px;
             }
         }
     </style>
@@ -307,30 +249,30 @@
 
 <div class="journey-container">
     
+    <div class="journey-image-wrapper">
+        <img src="https://drive.google.com/thumbnail?id=1zYACcrtn-7j2K1srlzvlN4sago3_sGmo&sz=w1000" alt="Bindu Swarupa Journey">
+    </div>
+
     <div class="timeline">
         <div class="year-card">
             <h2>First Year – Foundation & Focus</h2>
-            <p>My first year was all about building a strong academic foundation. I focused deeply on core subjects and adapting to the college environment.</p>
+            <p>Built a strong academic foundation. Focused deeply on core subjects and adapted to the college environment, shaping discipline and consistency.</p>
         </div>
 
         <div class="year-card">
             <h2>Second Year – Leadership & Involvement</h2>
-            <p>Served as Class Representative (CR) and Student Coordinator for "Spirit of AI" club. Participated in Prakruthi Club and achieved Academic Topper status.</p>
+            <p>Stepped beyond academics as Class Representative and Student Coordinator for "Spirit of AI." Achieved Academic Topper status.</p>
         </div>
 
         <div class="year-card">
             <h2>Third Year – Technical Growth & Visibility</h2>
-            <p>Focused on technical development, anchoring fests, and enhancing my project portfolio with AI-based solutions and certifications.</p>
+            <p>Focused on technical development, anchoring fests, and enhancing my project portfolio with AI solutions and certifications.</p>
         </div>
 
         <div class="year-card">
             <h2>Fourth Year – Career Focus & Professional Growth</h2>
-            <p>Currently refining technical expertise, building impactful AI projects, and preparing for professional roles in real-world solutions.</p>
+            <p>Refining technical expertise and preparing for professional roles. Building impactful AI projects for real-world contributions.</p>
         </div>
-    </div>
-
-    <div class="journey-image-wrapper">
-        <img src="https://drive.google.com/thumbnail?id=1zYACcrtn-7j2K1srlzvlN4sago3_sGmo&sz=w1000" alt="Bindu Swarupa Journey">
     </div>
 
 </div>
@@ -401,7 +343,6 @@
 
     themeToggle.addEventListener('click', () => {
         const isDark = body.getAttribute('data-theme') === 'dark';
-        
         if (isDark) {
             body.removeAttribute('data-theme');
             themeIcon.classList.replace('fa-sun', 'fa-moon');
