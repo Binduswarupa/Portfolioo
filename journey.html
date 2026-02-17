@@ -16,6 +16,7 @@
             --heading-color: #111827;
             --accent-color: #2563eb;
             --shadow: rgba(0,0,0,0.06);
+            --timeline-line: #e2e8f0;
         }
 
         /* --- DARK MODE VARIABLES --- */
@@ -26,6 +27,7 @@
             --text-muted: #cbd5e1;
             --heading-color: #ffffff;
             --shadow: rgba(0,0,0,0.3);
+            --timeline-line: #334155;
         }
 
         body {
@@ -100,37 +102,83 @@
             opacity: 0.9;
         }
 
-        .journey-section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
+        /* --- JOURNEY FLEX LAYOUT --- */
+        .journey-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 20px;
+            align-items: flex-start;
+        }
+
+        /* --- TIMELINE PROGRESS STYLES --- */
+        .timeline {
+            flex: 1;
+            position: relative;
+            padding-left: 30px;
+            border-left: 4px solid var(--timeline-line);
         }
 
         .year-card {
             background: var(--card-bg);
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 25px;
+            margin-bottom: 40px;
             border-radius: 12px;
             box-shadow: 0 8px 20px var(--shadow);
             transition: 0.3s ease;
-            border-top: 4px solid transparent;
+            position: relative;
+        }
+
+        /* Timeline Dot */
+        .year-card::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-color);
+            border: 4px solid var(--bg-color);
+            border-radius: 50%;
+            z-index: 2;
         }
 
         .year-card:hover {
-            transform: translateY(-5px);
+            transform: translateX(10px);
             box-shadow: 0 15px 30px var(--shadow);
-            border-top: 4px solid var(--accent-color);
+            border-left: 5px solid var(--accent-color);
         }
 
         .year-card h2 {
             color: var(--accent-color);
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .year-card p {
             line-height: 1.7;
             color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* --- RIGHT SIDE IMAGE --- */
+        .journey-image-wrapper {
+            flex: 0 0 400px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .journey-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 5px solid var(--card-bg);
+            transition: 0.3s;
+        }
+
+        .journey-image-wrapper img:hover {
+            transform: scale(1.02);
         }
 
         /* --- POSITIONS OF RESPONSIBILITY --- */
@@ -223,6 +271,24 @@
             font-size: 0.9rem;
             opacity: 0.7;
         }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 992px) {
+            .journey-container {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+            .journey-image-wrapper {
+                flex: none;
+                width: 100%;
+                max-width: 500px;
+                position: static;
+                margin-bottom: 40px;
+            }
+            .timeline {
+                padding-left: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -239,27 +305,35 @@
     <p>A Timeline of Growth, Leadership & Innovation</p>
 </header>
 
-<section class="journey-section">
-    <div class="year-card">
-        <h2>First Year – Foundation & Focus</h2>
-        <p>My first year was all about building a strong academic foundation. I focused deeply on core subjects and adapting to the college environment.</p>
+<div class="journey-container">
+    
+    <div class="timeline">
+        <div class="year-card">
+            <h2>First Year – Foundation & Focus</h2>
+            <p>My first year was all about building a strong academic foundation. I focused deeply on core subjects and adapting to the college environment.</p>
+        </div>
+
+        <div class="year-card">
+            <h2>Second Year – Leadership & Involvement</h2>
+            <p>Served as Class Representative (CR) and Student Coordinator for "Spirit of AI" club. Participated in Prakruthi Club and achieved Academic Topper status.</p>
+        </div>
+
+        <div class="year-card">
+            <h2>Third Year – Technical Growth & Visibility</h2>
+            <p>Focused on technical development, anchoring fests, and enhancing my project portfolio with AI-based solutions and certifications.</p>
+        </div>
+
+        <div class="year-card">
+            <h2>Fourth Year – Career Focus & Professional Growth</h2>
+            <p>Currently refining technical expertise, building impactful AI projects, and preparing for professional roles in real-world solutions.</p>
+        </div>
     </div>
 
-    <div class="year-card">
-        <h2>Second Year – Leadership & Involvement</h2>
-        <p>Served as Class Representative (CR) and Student Coordinator for "Spirit of AI" club. Participated in Prakruthi Club and achieved Academic Topper status.</p>
+    <div class="journey-image-wrapper">
+        <img src="https://drive.google.com/thumbnail?id=1zYACcrtn-7j2K1srlzvlN4sago3_sGmo&sz=w1000" alt="Bindu Swarupa Journey">
     </div>
 
-    <div class="year-card">
-        <h2>Third Year – Technical Growth & Visibility</h2>
-        <p>Focused on technical development, anchoring fests, and enhancing my project portfolio with AI-based solutions and certifications.</p>
-    </div>
-
-    <div class="year-card">
-        <h2>Fourth Year – Career Focus & Professional Growth</h2>
-        <p>Currently refining technical expertise, building impactful AI projects, and preparing for professional roles in real-world solutions.</p>
-    </div>
-</section>
+</div>
 
 <div class="responsibility-header">
     <h2 style="font-size: 2.2rem;">Positions of Responsibility</h2>
@@ -313,8 +387,8 @@
 <footer>
     <div class="footer-socials">
         <a href="https://linkedin.com/in/binduswarupavemulapalli" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:bindu@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Binduswarupa" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:swarupavemulapallii@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
     <p>&copy; 2024 Bindu Swarupa. All Rights Reserved.</p>
     <p>Built with passion for AI and Leadership.</p>
@@ -340,4 +414,3 @@
 
 </body>
 </html>
-
