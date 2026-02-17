@@ -120,6 +120,8 @@
 
         .journey-image-wrapper img {
             width: 100%;
+            height: 650px; /* INCREASED HEIGHT */
+            object-fit: cover; /* ENSURES PHOTO LOOKS NATURAL */
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             border: 5px solid var(--card-bg);
@@ -227,6 +229,9 @@
                 max-width: 500px;
                 position: static;
                 margin-bottom: 40px;
+            }
+            .journey-image-wrapper img {
+                height: auto; /* ALLOWS NATURAL HEIGHT ON MOBILE */
             }
         }
     </style>
