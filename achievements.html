@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | Bindu Swarupa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb; 
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --accent: #ffd700; /* Gold for trophies */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+
+        /* Fixed Navigation */
+        .back-home {
+            position: fixed; top: 25px; right: 8%; padding: 10px 22px;
+            background: var(--primary); color: white; text-decoration: none;
+            border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); transition: 0.3s; z-index: 1000;
+        }
+        .back-home:hover { transform: translateY(-2px); background: #1d4ed8; }
+
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: var(--dark);
+            color: white;
+        }
+
+        header h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; }
+        header p { color: #94a3b8; font-size: 1.1rem; }
+
+        .container { max-width: 1200px; margin: auto; padding: 60px 8%; }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+        }
+
+        .icon-box {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .achievement-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .merit-tag {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #ffffff;
+            padding: 50px 8% 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer-bottom {
+            padding-top: 20px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .container { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Home</a>
+
+    <header>
+        <h1>🏆 Achievements</h1>
+        <p>Recognitions, Publications, and Academic Excellence</p>
+    </header>
+
+    <main class="container">
+        <div class="achievements-grid">
+
+            
+
+            <div class="achievement-card">
+                <div class="icon-box"><i class="fas fa-medal"></i></div>
+                <span class="merit-tag">Scholarship Recipient</span>
+                <h3>Academic Topper (2023-24)</h3>
+                <p>Recognized as the Academic Topper for the year 2023-24. Received a Merit Scholarship with a cash prize of ₹20,000 for consistent excellence.</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="icon-box" style="color: var(--primary);"><i class="fas fa-file-invoice"></i></div>
+                <h3>Paper Publication</h3>
+                <p>Published a Conference paper in ICISSC-2024 organized by Malla Reddy University. Paper featured in Springer Proceedings.</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="icon-box"><i class="fas fa-star"></i></div>
+                <h3>Best Performer of the Year</h3>
+                <p>Honored as the Best Performer of the Year (2025-26) for Prakruthi – The Environmental Club at LBRCE.</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="icon-box"><i class="fas fa-trophy"></i></div>
+                <h3>1st Prize - Elocution</h3>
+                <p>Won the First Prize in the Elocution competition conducted by the Spoorthi Club, demonstrating strong communication skills.</p>
+            </div>
+
+            <div class="achievement-card">
+                <div class="icon-box" style="color: #94a3b8;"><i class="fas fa-award"></i></div>
+                <h3>Runner-up: Brainstorm</h3>
+                <p>Secured the Runner-up position in the Brainstorm Event conducted by the Department of AI & Data Science.</p>
+            </div>
+             <div class="achievement-card">
+                <div class="icon-box" style="color: #22c55e;"><i class="fas fa-seedling"></i></div>
+                <h3>Incubation Funding</h3>
+                <p>Received funding from the college incubation cell for the development of the "Real-Time Department Classification" project.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="icon-box" style="color: #64748b;"><i class="fas fa-certificate"></i></div>
+                <h3>NPTEL Certification</h3>
+                <p>Secured the prestigious Elite + Silver certification in "Introduction to Internet of Things" from NPTEL.</p>
+            </div>
+
+        
+            <div class="achievement-card">
+                <div class="icon-box"><i class="fas fa-graduation-cap" style="color: var(--primary);"></i></div>
+                <h3>SSC Achievement</h3>
+                <p>Achieved a perfect 100% (10/10 GPA) in the Secondary School Certificate (SSC) examinations, laying a strong foundation for a career in engineering.</p>
+            </div>
+            <div class="achievement-card" style="justify-content: center; align-items: center; border-style: dashed; background: #f1f5f9;">
+                <div class="icon-box"><i class="fas fa-plus-circle" style="color: #64748b;"></i></div>
+                <h3 style="color: #64748b; margin-bottom: 0;">And Many More...</h3>
+                <p style="text-align: center; margin-top: 10px;">Continuously striving for excellence through active participation in technical symposia and workshops.</p>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-brand">
+            <h2 style="color: var(--primary); margin-bottom: 10px;">Bindu Swarupa</h2>
+            <p style="color: #64748b;">Building intelligent solutions <br> with AI and Cloud.</p>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Bindu Swarupa Vemulapalli. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
