@@ -9,20 +9,49 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #f4f6f9;
+            color: #333;
         }
 
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             background: #111827;
             color: white;
+            position: relative;
+        }
+
+        /* --- HOME BUTTON AT TOP --- */
+        .home-btn-top {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .home-btn-top:hover {
+            background: #2563eb;
+            border-color: #2563eb;
         }
 
         header h1 {
             margin: 0;
-            font-size: 32px;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
         .journey-section {
@@ -33,40 +62,43 @@
 
         .year-card {
             background: white;
-            padding: 25px;
+            padding: 30px;
             margin-bottom: 30px;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             transition: 0.3s ease;
+            border-top: 4px solid transparent;
         }
 
         .year-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #2563eb;
         }
 
         .year-card h2 {
             color: #2563eb;
             margin-top: 0;
+            font-size: 1.5rem;
         }
 
         .year-card p {
-            line-height: 1.6;
-            color: #444;
+            line-height: 1.7;
+            color: #4b5563;
         }
 
-        /* --- NEW POSITIONS OF RESPONSIBILITY STYLES --- */
+        /* --- POSITIONS OF RESPONSIBILITY --- */
         .responsibility-header {
             text-align: center;
-            margin-top: 50px;
-            margin-bottom: 30px;
+            margin-top: 60px;
+            margin-bottom: 40px;
         }
 
         .responsibility-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
             margin: auto;
             padding: 0 20px;
         }
@@ -86,39 +118,70 @@
         }
 
         .res-card i {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #2563eb;
             margin-bottom: 15px;
         }
 
         .res-card h3 {
             margin: 10px 0;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #111827;
         }
 
         .res-card h4 {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #6b7280;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             margin-bottom: 15px;
         }
 
         .res-card p {
             font-size: 0.95rem;
             color: #4b5563;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        .back-home {
+        /* --- FOOTER STYLES --- */
+        footer {
+            background: #111827;
+            color: white;
             text-align: center;
-            margin: 60px 0;
+            padding: 40px 20px;
+            margin-top: 80px;
         }
 
-        .back-home a {
+        .footer-socials {
+            margin-bottom: 20px;
+        }
+
+        .footer-socials a {
+            color: white;
+            font-size: 1.6rem;
+            margin: 0 15px;
+            transition: 0.3s;
             text-decoration: none;
-            padding: 12px 25px;
+        }
+
+        .footer-socials a:hover {
+            color: #2563eb;
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .back-home-bottom {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .back-home-bottom a {
+            text-decoration: none;
+            padding: 12px 30px;
             background: #2563eb;
             color: white;
             border-radius: 50px;
@@ -126,7 +189,7 @@
             transition: 0.3s;
         }
 
-        .back-home a:hover {
+        .back-home-bottom a:hover {
             background: #1d4ed8;
             box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
@@ -136,56 +199,47 @@
 <body>
 
 <header>
+    <a href="index.html" class="home-btn-top"><i class="fas fa-home"></i> Home</a>
     <h1>🚀 My B.Tech Journey</h1>
-    <p>Growth Beyond Academics</p>
+    <p>A Timeline of Growth, Leadership & Innovation</p>
 </header>
 
 <section class="journey-section">
-
     <div class="year-card">
         <h2>First Year – Foundation & Focus</h2>
         <p>
             My first year was all about building a strong academic foundation. 
             I focused deeply on understanding core subjects, improving my technical basics, 
-            and adapting to the college environment. 
-            This year shaped my discipline and consistency.
+            and adapting to the college environment. This year shaped my discipline and consistency.
         </p>
     </div>
 
     <div class="year-card">
         <h2>Second Year – Leadership & Involvement</h2>
         <p>
-            In my second year, I stepped beyond academics. 
-            I served as Class Representative (CR) and Student Coordinator for the 
-            "Spirit of AI" department club. 
-            I actively participated in Prakruthi – the Environmental Club, 
-            updated and strengthened my LinkedIn presence, 
-            and achieved recognition as an Academic Topper. 
-            This year transformed me from a learner into a leader.
+            In my second year, I stepped beyond academics. I served as Class Representative (CR) 
+            and Student Coordinator for the "Spirit of AI" department club. I actively 
+            participated in Prakruthi Environmental Club and achieved recognition as an Academic Topper.
         </p>
     </div>
 
     <div class="year-card">
         <h2>Third Year – Technical Growth & Visibility</h2>
         <p>
-            My third year focused on technical development and public presence. 
-            I worked as a Technical Event Coordinator, participated in anchoring events, 
-            and took on a leading role in Prakruthi Club activities. 
-            I enhanced my project portfolio, internships, and certifications, 
-            gaining confidence both technically and personally.
+            Focused on technical development and public presence. I worked as a Technical Event 
+            Coordinator, anchored major fests, and enhanced my project portfolio with AI-based 
+            solutions and professional certifications.
         </p>
     </div>
 
     <div class="year-card">
         <h2>Fourth Year – Career Focus & Professional Growth</h2>
         <p>
-            In my final year, my primary focus is career readiness and industry exposure. 
-            I am refining my technical expertise, preparing for job opportunities, 
-            building impactful AI-based projects, and positioning myself 
-            as a future AI professional ready to contribute to real-world solutions.
+            Currently refining technical expertise and preparing for industry roles. 
+            Focusing on building impactful AI projects and positioning myself as a future 
+            professional ready to contribute to real-world solutions.
         </p>
     </div>
-
 </section>
 
 <div class="responsibility-header">
@@ -195,7 +249,7 @@
 
 <div class="responsibility-grid">
     <div class="res-card">
-        <i class="fas fa-users-crown"></i>
+        <i class="fas fa-users-cog"></i>
         <h3>Vice-President</h3>
         <h4>Student Council of LBRCE</h4>
         <p>Elected to lead student initiatives and serve as a key representative between the student body and college administration.</p>
@@ -228,17 +282,28 @@
         <h4>Lakshya 2K24</h4>
         <p>Served as the lead anchor for formal and informal segments of the college's annual technical and cultural fest.</p>
     </div>
-     <div class="res-card">
-        <i class="fas fa-microphone-alt"></i>
-        <h3>Many More To Add</h3>
-        <h4>Holded More Positions</h4>
-        <p>Continuously striving for excellence through active participation & LeaderShip</p>
-    </div>
-    
 
-<div class="back-home">
+    <div class="res-card" style="border-left: 5px solid #6b7280; background: #f9fafb;">
+        <i class="fas fa-plus-circle" style="color: #6b7280;"></i>
+        <h3>Multifaceted Contributions</h3>
+        <h4>Ongoing Impact</h4>
+        <p>Continuously striving for excellence through active participation in various committees and leadership forums.</p>
+    </div>
+</div>
+
+<div class="back-home-bottom">
     <a href="index.html">⬅ Back to Home</a>
 </div>
+
+<footer>
+    <div class="footer-socials">
+        <a href="https://linkedin.com/in/binduswarupavemulapalli" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:bindu@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2026 Bindu Swarupa. All Rights Reserved.</p>
+    <p>Built with passion for AI and Leadership.</p>
+</footer>
 
 </body>
 </html>
