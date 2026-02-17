@@ -39,21 +39,22 @@
         header {
             text-align: center;
             padding: 60px 20px;
-            background: #111827; /* Header stays dark in both modes */
+            background: #111827; 
             color: white;
             position: relative;
         }
 
-        /* --- HEADER BUTTONS --- */
+        /* --- HEADER CONTROLS --- */
         .header-controls {
             position: absolute;
             top: 20px;
             left: 20px;
             display: flex;
             gap: 10px;
+            align-items: center;
         }
 
-        .home-btn-top, .theme-toggle {
+        .home-btn-top {
             text-decoration: none;
             color: white;
             background: rgba(255, 255, 255, 0.1);
@@ -62,10 +63,24 @@
             font-size: 0.9rem;
             transition: 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            cursor: pointer;
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.1rem;
         }
 
         .home-btn-top:hover, .theme-toggle:hover {
@@ -216,8 +231,8 @@
 <header>
     <div class="header-controls">
         <a href="index.html" class="home-btn-top"><i class="fas fa-home"></i> Home</a>
-        <button class="theme-toggle" id="themeToggle">
-            <i class="fas fa-moon" id="themeIcon"></i> <span id="themeText">Dark</span>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+            <i class="fas fa-moon" id="themeIcon"></i>
         </button>
     </div>
     <h1>🚀 My B.Tech Journey</h1>
@@ -227,7 +242,7 @@
 <section class="journey-section">
     <div class="year-card">
         <h2>First Year – Foundation & Focus</h2>
-        <p>My first year was all about building a strong academic foundation. I focused deeply on understanding core subjects and adapting to the college environment.</p>
+        <p>My first year was all about building a strong academic foundation. I focused deeply on core subjects and adapting to the college environment.</p>
     </div>
 
     <div class="year-card">
@@ -308,7 +323,6 @@
 <script>
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const themeText = document.getElementById('themeText');
     const body = document.body;
 
     themeToggle.addEventListener('click', () => {
@@ -317,11 +331,9 @@
         if (isDark) {
             body.removeAttribute('data-theme');
             themeIcon.classList.replace('fa-sun', 'fa-moon');
-            themeText.innerText = "Dark";
         } else {
             body.setAttribute('data-theme', 'dark');
             themeIcon.classList.replace('fa-moon', 'fa-sun');
-            themeText.innerText = "Light";
         }
     });
 </script>
