@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -234,8 +235,68 @@
                 height: auto; /* ALLOWS NATURAL HEIGHT ON MOBILE */
             }
         }
+footer {
+    background: #ffffff;
+    padding: 50px 8% 20px;
+    border-top: 1px solid #e2e8f0;
+    color: var(--dark);
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: var(--gray);
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
     </style>
 </head>
+
 <body>
 
 <header>
@@ -343,14 +404,14 @@
         }
     });
 </script>
-    <footer>
+<footer>
 
     <div class="footer-content">
 
         <div class="footer-brand">
             <h2>Bindu Swarupa</h2>
-            <p>
-                Building intelligent solutions with AI and Cloud.
+            <p style="color: var(--gray);">
+                Building intelligent solutions <br> with AI and Cloud.
             </p>
         </div>
 
@@ -361,8 +422,6 @@
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="journey.html">Journey</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
             </ul>
         </div>
 
@@ -397,5 +456,4 @@
 
 </body>
 </html>
-
 
